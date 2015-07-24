@@ -1,0 +1,52 @@
+.tab-content {
+	padding: 2.5%;
+	border-top: 0 solid #ddd;
+	border-bottom: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+}
+
+.main-btn-in-tab-content {
+	margin: 1.5% 3%;
+}
+
+.tab-pane-content-container {
+	margin: 3%;
+}
+
+
+#project-main-progress-bar {
+	/*margin: 15px;*/
+}
+
+td>div.progress {
+	margin: 0.9%;
+}
+
+.progress-bar {
+	min-width: 2em; 
+}
+
+.lang-name {
+	margin: 0.9% 0;
+}
+
+#input-file-for-upload-new-xml {
+	margin-bottom: 25px;
+}
+
+#main-content {
+	margin-bottom: 30px;
+}
+
+#btn-delete-project {
+	margin: 30px;
+}
+
+#project-status-container {
+	margin: 2% 0;
+}
+
+div#project-status-container>label {
+	padding: 0;
+}

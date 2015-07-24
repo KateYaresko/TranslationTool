@@ -1,0 +1,7 @@
+textarea.form-control[disabled] {
+	cursor: text;
+}
+
+textarea.form-control {
+		resize: none;
+}

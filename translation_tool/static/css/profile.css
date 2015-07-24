@@ -1,0 +1,50 @@
+.change-psw-input {
+	margin-top: 1%;
+}
+
+.progress {
+	margin-bottom: 0;
+	width: 100%;
+}
+
+.progress-bar {
+	min-width: 2em;
+}
+
+.list-group {
+	margin-bottom: 0;
+}
+
+label {
+	margin-bottom: 0;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.settings {
+	margin-bottom: 20%;
+}
+
+.table-projects>tbody>tr>td {
+	padding-left: 10px;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.tabpanel {
+	margin: 3%;
+}
+
+.tab-content {
+	padding: 2.5%;
+	border-bottom: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+}
+
+tfoot input {
+	width: 100%;
+	padding: 1.5%;
+}

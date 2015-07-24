@@ -1,0 +1,122 @@
+{% extends "layout.html" %}
+
+{% block navbar %}
+<header>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">CW</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+							Projects
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu" role="menu">
+							<li>
+								<a href="#newProjectModal" data-toggle="modal">New project</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="/228/project_properties">My project</a>
+							</li>
+							<li>
+								<a href="/111/project_properties">Oriflame</a>
+							</li>
+							<li>
+								<a href="/322/project_properties">D&amp;G</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="{{ url_for('profile') }}">My Account</a>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="#navbarModal" data-toggle="modal">
+							Notifications&nbsp;
+							<span class="badge">1</span>
+						</a>
+					</li>
+					<li>
+						<a href="{{ url_for('signout') }}">Sign out</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</header>
+
+<div id="navbarModal" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title text-center">New Job Offer</h4>
+			</div>
+			<div class="modal-body">
+				<p> <strong>Creator:</strong>
+					&nbsp;Vasya Vasylchikov (dreamscometrue@gmail.com)
+				</p>
+				<p> <strong>Project name:</strong>
+					&nbsp;Furniture Store
+				</p>
+				<p>
+					<strong>Language:</strong>
+					<span>
+						<img src="/static/img/flags/pt.png">&nbsp;Portuguese</span>
+				</p>
+				<p>
+					<span style="float:left">
+						<label>Status:&nbsp;</label>
+					</span>
+					<div class="progress">
+						<div class="progress-bar" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100" style="width: 5%;">5%</div>
+					</div>
+				</p>
+				<br/>
+				<label>Do you accept the offer?</label>
+			</div>
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-primary popup-btn" data-dismiss="modal">Yes</button>
+				<button type="button" class="btn btn-default popup-btn" data-dismiss="modal">No</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="newProjectModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title text-center">Add Project</h4>
+			</div>
+			<form id="createProjectForm">
+				<div class="modal-body">
+					<div class="input-group">
+						<label for="name">Name*</label>
+						<input type="text" class="form-control" id="name_proj" name="name" autofocus>
+					</div>
+					<div class="input-group">
+						<label for="description">Description</label>
+						<textarea id="description_proj" class="form-control" name="description"></textarea>
+					</div>				
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-primary popup-btn" name="create-project">Add</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}

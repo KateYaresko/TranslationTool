@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block head %}
+	<title>Sing in</title>
+	<link href="/static/css/signin.css" type="text/css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+	<div class="jumbotron">
+		<h3 class="text-center">Sign in</h3>
+		<hr class="colorgraph">
+		{% if form.email.errors|length > 0 %}
+		    {% set email_input_class = "input-group has-error" %}
+		{% else %}
+		    {% set email_input_class = "input-group" %}
+		{% endif %}
+
+		{% if form.password.errors|length > 0 %}
+		    {% set pass_input_class = "input-group has-error" %}
+		{% else %}
+		    {% set pass_input_class = "input-group" %}
+		{% endif %}
+		<form action="{{ url_for('signin') }}" method=post>
+			{{ form.hidden_tag() }}
+			{% with errors = get_flashed_messages(category_filter=["info"]) %}
+				{% if errors %}
+				<div class="alert alert-info flash error" role="alert">
+					<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+					<span class="sr-only">Error:</span>
+				    {%- for msg in errors %}
+				        {{ msg }}
+				    {% endfor -%}
+				</div>
+				{% endif %}
+			{% endwith %}
+			<div class="{{ email_input_class }}">
+				<a class="input-group-addon"><span class="input-group glyphicon glyphicon-envelope"></span></a>
+				<input type="text" class="form-control" placeholder="example@email.com" aria-describedby="email" name="email" autofocus value="{{ email }}">
+			</div>
+			<div class="input-group has-error">
+				{% for message in form.email.errors %}
+					<label class="control-label" for="inputError1">{{ message }}</label>
+				{% endfor %}
+			</div>
+			<div class="{{ pass_input_class }}">
+				<a class="input-group-addon"><span class="input-group glyphicon glyphicon-lock"></span></a>
+				<input type="password" class="form-control" placeholder="password" aria-describedby="password" name="password">
+			</div>
+			<div class="input-group has-error">
+				{% for message in form.password.errors %}
+					<label class="control-label" for="inputError1">{{ message }}</label>
+				{% endfor %}
+			</div>
+			<div class="input-group checkbox">
+				<label><input type="checkbox" name="remember_me">Remember me</label>
+			</div>
+			<div class="text-center">
+				<button type="submit" class="btn btn-primary btn-block">SIGN IN</button>
+			</div>
+			<div class="input-group link">
+				<h5>Don't have an account? <a href="{{ url_for('signup') }}">Sign up!</a></h5>
+			</div>
+			<div class="input-group link">
+				<h5>Forgot your password? <a href="{{ url_for('retrieve_password') }}">Retrieve it!</a></h5>
+			</div>
+		</form>
+	</div>
+{% endblock %}
+
+{% block js %}
+{% endblock %}
